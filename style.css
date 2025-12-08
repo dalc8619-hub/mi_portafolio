@@ -1,0 +1,244 @@
+/* --- VARIABLES: Paleta "Noche en el Sumapaz" --- */
+:root {
+    --bg-dark: #0a0f0d;       /* Negro verdoso muy oscuro */
+    --bg-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    --gold: #d4af37;          /* Dorado Patrimonio */
+    --green-neon: #00ff88;    /* Toque digital/futurista sutil */
+    --text-main: #ecf0f1;     /* Blanco suave */
+    --glass: rgba(255, 255, 255, 0.05); /* Efecto vidrio */
+}
+
+/* --- RESET & BASES --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* --- ANIMACIÓN DE FONDO VIVO --- */
+.background-animate {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: var(--bg-gradient);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- MENÚ TIPO "CRISTAL" (Glassmorphism) --- */
+nav {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 15, 13, 0.7);
+    backdrop-filter: blur(10px); /* Efecto borroso detrás */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-links { display: flex; gap: 2rem; }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0; height: 2px;
+    bottom: -5px; left: 0;
+    background-color: var(--green-neon);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+/* --- HERO SECTION (La Portada) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    opacity: 0; /* Empieza invisible */
+    animation: fadeInUp 1s ease forwards 0.5s; /* Animación de entrada */
+}
+
+.hero span { color: var(--green-neon); font-style: italic; }
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    color: #bdc3c7;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 0.8s;
+}
+
+/* --- BOTONES CREATIVOS --- */
+.cta-container {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 1.1s;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 10px;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background: var(--gold);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5); /* Resplandor dorado */
+}
+
+/* --- ANIMACIÓN DE TEXTO (Entrada suave hacia arriba) --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .nav-links { display: none; } /* Ocultar menú en móvil por ahora */
+}
+/* --- ESTILOS PARA EL BLOG (blog.html) --- */
+.content-section {
+    padding: 8rem 10%; /* Espacio para no chocar con el menú */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.05); /* Vidrio oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--gold);
+}
+
+.blog-date { color: var(--green-neon); font-size: 0.8rem; letter-spacing: 1px; }
+.blog-title { font-size: 1.5rem; margin: 0.5rem 0; color: var(--text-main); }
+.blog-excerpt { color: #bdc3c7; font-size: 0.9rem; line-height: 1.6; }
+
+/* --- ESTILOS PARA LA GALERÍA (galeria.html) --- */
+.gallery-grid {
+    column-count: 3; /* Efecto Masonry (Ladrillos) */
+    column-gap: 1.5rem;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: 0.5s;
+    filter: grayscale(40%); /* Un poco desaturado para elegancia */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%); /* A color al pasar el mouse */
+}
+
+/* --- ESTILOS PARA PERFIL (perfil.html) --- */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background: rgba(0,0,0,0.4);
+    padding: 3rem;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--green-neon);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+}
+
+/* Responsive para estas secciones */
+@media (max-width: 768px) {
+    .gallery-grid { column-count: 1; }
+    .profile-container { flex-direction: column; text-align: center; }
+}
