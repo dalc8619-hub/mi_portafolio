@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Darío López</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
@@ -12,44 +13,47 @@
         <div class="logo">Darío.LC</div>
         <div class="nav-links">
             <a href="index.html">Inicio</a>
-            <a href="blog.html" style="color: var(--green-neon);">Blog</a>
-            <a href="galeria.html">Galería</a>
+            <a href="blog.html" style="color: var(--green-neon);">Blog & Escritos</a>
+            <a href="galeria.html">Galería Visual</a>
             <a href="perfil.html">Sobre Mí</a>
         </div>
     </nav>
 
-    <section class="content-section">
-        <h1 class="section-title">Bitácora de Reflexión</h1>
-        
+    <section class="blog-section">
+        <h1>Bitácora <span style="color: var(--green-neon);">Digital</span></h1>
+        <p class="blog-intro">Reflexiones sobre cultura, tecnología y la condición humana.</p>
+
         <div class="blog-grid">
+            
             <article class="blog-card">
-                <span class="blog-date">PATRIMONIO • 08 DIC 2025</span>
-                <h3 class="blog-title">Las Casonas Ocultas de Fusagasugá</h3>
-                <p class="blog-excerpt">Un análisis fotográfico sobre cómo la arquitectura colonial sobrevive entre la modernidad y el olvido.</p>
-                <a href="#" class="btn" style="margin: 1rem 0 0 0; font-size: 0.8rem;">LEER MÁS</a>
+                <img src="img/comunicacion-cultura.png" alt="Comunicación y Cultura" class="card-image">
+                <div class="card-content">
+                    <h3>Comunicación y Cultura</h3>
+                    <p>La era digital no es solo un cambio tecnológico, es el culmen de un desarrollo histórico. ¿Cómo nos transforma?</p>
+                    <a href="articulo-comunicacion.html" target="_blank" class="btn-leermas">Leer Entrada</a>
+                </div>
             </article>
 
             <article class="blog-card">
-                <span class="blog-date">FILOSOFÍA • 20 NOV 2025</span>
-                <h3 class="blog-title">Spinoza y la Inteligencia Artificial</h3>
-                <p class="blog-excerpt">¿Puede una máquina tener 'Conatus'? Reflexiones sobre la ética en la era de los algoritmos generativos.</p>
-                <a href="#" class="btn" style="margin: 1rem 0 0 0; font-size: 0.8rem;">LEER MÁS</a>
+                <div class="card-image" style="background-color: #444;"></div>
+                <div class="card-content">
+                    <h3>Cine Zombi y Sociedad</h3>
+                    <p>De los esclavos sin alma en Haití a la horda apocalíptica moderna. Una evolución del miedo colectivo.</p>
+                    <a href="https://notasytrazosenlaeradigital22.blogspot.com/2024/08/de-los-esclavos-sin-alma-la-horda.html" target="_blank" class="btn-leermas">Leer Entrada</a>
+                </div>
             </article>
 
             <article class="blog-card">
-                <span class="blog-date">MEDIO AMBIENTE • 15 OCT 2025</span>
-                <h3 class="blog-title">La Niebla del Sumapaz</h3>
-                <p class="blog-excerpt">Crónica de una visita al páramo: la importancia del agua y los frailejones en nuestro ecosistema.</p>
-                <a href="#" class="btn" style="margin: 1rem 0 0 0; font-size: 0.8rem;">LEER MÁS</a>
+                <div class="card-image" style="background-color: #222;"></div>
+                <div class="card-content">
+                    <h3>Mindfulness y Mente</h3>
+                    <p>En un mundo de caos y ansiedad, el mindfulness emerge no como moda, sino como acto de liberación mental.</p>
+                    <a href="https://notasytrazosenlaeradigital22.blogspot.com/2024/04/mindfulness-transformando-la-mente-y.html" target="_blank" class="btn-leermas">Leer Entrada</a>
+                </div>
             </article>
+
         </div>
     </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-    <script>
-        // ... (Copia aquí el código de la Niebla Eterna) ...
-        // Si quieres ahorrar espacio, puedes guardar el script JS en un archivo 'fondo.js' y enlazarlo.
-    </script>
 
 </body>
 </html>

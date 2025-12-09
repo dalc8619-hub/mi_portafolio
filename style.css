@@ -242,3 +242,136 @@ nav {
     .gallery-grid { column-count: 1; }
     .profile-container { flex-direction: column; text-align: center; }
 }
+/* --- ESTILOS DEL BLOG --- */
+
+.blog-section {
+    padding: 100px 10%; /* Espacio para que no choque con el menú */
+    text-align: center;
+}
+
+.blog-intro {
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* La Rejilla (Grid) */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo automático */
+    gap: 2rem; /* Espacio entre tarjetas */
+}
+
+/* La Tarjeta Individual */
+.blog-card {
+    background-color: #1a1a1a; /* Fondo gris oscuro */
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden; /* Para que la imagen no se salga de las esquinas */
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px); /* Efecto de flotar al pasar el mouse */
+    border-color: var(--green-neon); /* Borde neón al pasar el mouse */
+}
+
+/* Imagen falsa por ahora (placeholder) */
+.card-image {
+    width: 100%;
+    height: 200px;
+    background-color: #555;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-leermas {
+    text-decoration: none;
+    color: var(--green-neon);
+    font-weight: bold;
+    border: 1px solid var(--green-neon);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.btn-leermas:hover {
+    background-color: var(--green-neon);
+    color: #000;
+}
+/* --- ESTILOS DE ARTÍCULO INDIVIDUAL --- */
+.article-container {
+    max-width: 800px; /* Ancho máximo para lectura cómoda */
+    margin: 100px auto 50px; /* Centrado horizontalmente */
+    padding: 0 20px;
+}
+
+.article-date {
+    color: var(--green-neon);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.article-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.article-main-image {
+    width: 100%;
+    height: 300px;
+    background-color: #333; /* Placeholder gris (aquí iría tu imagen real) */
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.article-text p {
+    margin-bottom: 20px;
+    line-height: 1.8; /* Espacio entre líneas para leer mejor */
+    font-size: 1.1rem;
+    color: #ddd;
+    text-align: justify; /* Opcional: justifica el texto */
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 30px;
+    color: var(--green-neon);
+    text-decoration: none;
+    font-weight: bold;
+}
+/* --- AJUSTES DE IMÁGENES --- */
+
+/* En la tarjeta del blog */
+.blog-card .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Esto hace que la imagen cubra el espacio sin estirarse */
+}
+
+/* En el artículo completo */
+.article-main-image {
+    width: 100%;
+    height: auto; /* Deja que la altura se ajuste automáticamente */
+    max-height: 400px; /* Limita la altura para que no sea gigante */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
